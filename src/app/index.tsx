@@ -3,8 +3,16 @@ import {useCallback} from "react";
 import {View} from "react-native";
 
 const Index = () => {
-  const onReady = useCallback(() => {
-    alert("It shows");
+  const onVoidAndOptionalChain = useCallback(() => {
+    alert("onVoidAndOptionalChain was called");
+  }, []);
+
+  const onVoid = useCallback(() => {
+    alert("onVoid was called");
+  }, []);
+
+  const onOptionalChain = useCallback(() => {
+    alert("onOptionalChain was called");
   }, []);
 
   return (
@@ -14,7 +22,11 @@ const Index = () => {
       alignItems: "center",
       justifyContent: "center",
     }}>
-      <WelcomeText onReady={onReady} />
+      <WelcomeText
+        onVoidAndOptionalChain={onVoidAndOptionalChain}
+        onVoid={onVoid}
+        onOptionalChain={onOptionalChain}
+      />
     </View>
   );
 }
