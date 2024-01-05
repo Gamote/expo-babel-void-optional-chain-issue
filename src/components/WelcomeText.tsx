@@ -7,7 +7,7 @@ type WelcomeTextProps = {
 
 const WelcomeText: FC<WelcomeTextProps> = ({onReady}) => {
   useEffect(() => {
-    // TODO: this is not called
+    // TODO: this is not called on SDK 50
     void onReady?.();
   }, []);
 
